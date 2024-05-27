@@ -1,1 +1,8 @@
-The dataset will be made public as soon as the article is published online.
+The ODinMJ (Object Detection in Mountain Jungle) dataset is an RGB-T object detection dataset. We preliminarily collected over 60000 RGB-T image pairs. Afterwards, we performed strict manual filtering and preprocessing, including: 
+1) We abandoned the RGB-T image pairs with high repeatability caused by continuous shooting, avoiding external factors that enhance target features due to continuous sampling;
+2) We discarded the low-quality or blurry RGB-T image pairs due to the rapid flight, shaking, turning, and other operations of UAV;
+3) The RGB-T image pairs is misaligned due to the different physical properties of different sensors. We conducted manual registration and initially obtained the weakly aligned RGB-T images. The image resolution of both modalities is 640 × 512.
+
+In order to effectively evaluate the performance of machine learning models, we divided all selected RGB-T image pairs into a training set of 18457 pairs, a validation set of 2309 pairs, and a testing set of 2309 pairs in an 8:1:1 ratio. This dataset includes various environments such as different slopes, lighting, angles, as well as targets in different states such as being occluded or camouflaged. This dataset also includes manually annotated object detection labels, including labels corresponding to RGB and infrared modalities, as well as fusion labels of weakly aligned two modalities. The annotation format is YOLO data format, including target category and normalized coordinates of the target in the image.
+
+Composition:There are two compressed files for the dataset, one is the raw RGB-T data before registration, namely Original_ODinMJ_Dataset.zip, is named by default for drones, and the RGB image resolution is 4000 x 3000; the other is the registered RGB-T dataset, ODinMJ.zip, is named in numerical order. The naming correspondence between the two parts follows rename.txt.
